@@ -10,10 +10,24 @@ int main() {
     *
     */
 
+    string number = "";
+
     cout << "숫자를 입력하면 합과 평균을 구해줍니다!\n" << endl;
     cout << "스페이스바를 사용하여 여러개의 숫자를 넣을 수 있습니다." << endl;
     cout << "너무 크거나 작은 숫자 혹은 소숫점 6자리를 초과한 숫자는 입력이 안될 수 있습니다." << endl;
     cout << "\n--------------------------------------------------------------------------------\n" << endl;
+
+    while (true) {
+        cout << "숫자를 입력해주세요. Q)종료 : ";
+
+        cin >> number;
+
+        if (number.compare("Q") == 0 || number.compare("q") == 0) {
+            break;
+        }
+
+        cout << "\n" << endl;
+    }
 
 	return 0;
 }
