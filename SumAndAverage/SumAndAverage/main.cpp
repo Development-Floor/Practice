@@ -41,5 +41,9 @@ int main() {
         cout << "\n" << endl;
     }
 
+    double* number_array = new double[count];
+
+    delete[] number_array;
+
 	return 0;
 }
