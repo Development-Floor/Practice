@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -41,7 +42,22 @@ int main() {
         cout << "\n" << endl;
     }
 
+    if (count == 0) {
+        cout << "\n입력된 값이 없습니다." << endl;
+        return 0;
+    }
+
     double* number_array = new double[count];
+
+    int index = 0;
+
+    for (int i = 0; i < count; i++) {
+        index = numbers.find(" ");
+
+        number_array[i] = stod(numbers.substr(0, index));
+
+        numbers = numbers.substr(index + 1);
+    }
 
     delete[] number_array;
 
