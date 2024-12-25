@@ -35,9 +35,18 @@ int main() {
             break;
         }
 
-        count++;
+        try {
+            if (number.back() == '.' || number.compare((to_string(stod(number)).substr(0, number.size())))) {
+                throw number;
+            };
 
-        numbers = numbers + number + " ";
+            count++;
+
+            numbers = numbers + number + " ";
+        }
+        catch (...) {
+            cout << " " << number << " 는 입력이 불가능합니다." << endl;
+        }
 
         cout << "\n" << endl;
     }
