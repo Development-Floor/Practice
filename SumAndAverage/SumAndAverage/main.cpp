@@ -10,6 +10,8 @@ int main() {
     *
     */
 
+    string numbers = "";
+
     string number = "";
 
     cout << "숫자를 입력하면 합과 평균을 구해줍니다!\n" << endl;
@@ -25,6 +27,8 @@ int main() {
         if (number.compare("Q") == 0 || number.compare("q") == 0) {
             break;
         }
+
+        numbers = numbers + number + " ";
 
         cout << "\n" << endl;
     }
