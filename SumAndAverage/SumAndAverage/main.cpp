@@ -82,6 +82,13 @@ int main() {
         numbers = numbers.substr(index + 1);
     }
 
+    cout << "\n --- Á¾·á ---" << endl;
+
+
+    cout << fixed;
+    cout << "ÃÑÇÕ: " << Sum(number_array, count) << endl;
+    cout << "Æò±Õ: " << Avg(number_array, count) << endl;
+
     delete[] number_array;
 
 	return 0;
