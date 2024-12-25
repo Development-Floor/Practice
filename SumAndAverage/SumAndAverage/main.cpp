@@ -3,6 +3,16 @@
 
 using namespace std;
 
+double Sum(double* double_array, int size) {
+    double sum = 0;
+
+    for (int i = 0; i < size; i++) {
+        sum += double_array[i];
+    }
+
+    return sum;
+}
+
 int main() {
 
     /*
