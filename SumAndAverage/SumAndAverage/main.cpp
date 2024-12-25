@@ -13,6 +13,10 @@ double Sum(double* double_array, int size) {
     return sum;
 }
 
+double Avg(double* double_array, int size) {
+    return Sum(double_array, size) / size;
+}
+
 int main() {
 
     /*
