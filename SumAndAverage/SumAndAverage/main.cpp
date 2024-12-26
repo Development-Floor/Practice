@@ -165,6 +165,12 @@ int main() {
 
     cout << "\n-------------\n" << endl;
 
+    for (int i = 0; i < count; i++) {
+        cout << number_array[i] << " ";
+    }
+
+    cout << "\n" << endl;
+
     while (true) {
         cout << "숫자들을 정렬하세요!" << endl;
         cout << "1) 오름차순 2) 내림차순 : ";
@@ -177,6 +183,16 @@ int main() {
 
         cout << "정렬을 위해 1 or 2의 숫자만 입력해주세요.\n" << endl;
     }
+
+    MySort(number_array, count, check_desc);
+
+    cout << endl;
+
+    for (int i = 0; i < count; i++) {
+        cout << number_array[i] << " ";
+    }
+
+    cout << "\n" << endl;
 
     delete[] number_array;
 
