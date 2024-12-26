@@ -146,6 +146,18 @@ int main() {
     cout << "총합: " << Sum(number_array, count) << endl;
     cout << "평균: " << Avg(number_array, count) << endl;
 
+    /*
+    * 
+    * 정렬 사용
+    * 
+    */
+
+    int check_desc = 1;
+
+    cout << "\n-------------\n" << endl;
+    cout << "숫자들을 정렬하세요!" << endl;
+    cout << "1) 오름차순 2) 내림차순 : ";
+
     delete[] number_array;
 
 	return 0;
