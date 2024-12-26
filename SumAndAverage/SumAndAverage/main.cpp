@@ -155,8 +155,19 @@ int main() {
     int check_desc = 1;
 
     cout << "\n-------------\n" << endl;
-    cout << "숫자들을 정렬하세요!" << endl;
-    cout << "1) 오름차순 2) 내림차순 : ";
+
+    while (true) {
+        cout << "숫자들을 정렬하세요!" << endl;
+        cout << "1) 오름차순 2) 내림차순 : ";
+
+        cin >> check_desc;
+
+        if (check_desc == 1 || check_desc == 2) {
+            break;
+        }
+
+        cout << "정렬을 위해 1 or 2의 숫자만 입력해주세요.\n" << endl;
+    }
 
     delete[] number_array;
 
