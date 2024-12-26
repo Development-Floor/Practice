@@ -22,7 +22,52 @@ double Avg(double* double_array, int size) {
 // 정렬
 // isdesc == 1: 오름차순, isdesc == 2: 내림차순, 그 외: 예외처리
 void MySort(double* double_array, int size, int isdesc) {
+    if (size <= 1 || isdesc != 1 || isdesc != 2) {
+        return;
+    }
+    
+    int max_index = 0;
+    int min_index = 0;
 
+    int change = 0;
+
+    for (int i = 0; i < size / 2; i++) {
+        max_index = i;
+        min_index = i;
+
+        // 현재 반복의 최대값 최소값 구하기
+        for (int j = i + 1; j < size - i; j++) {
+            if (double_array[j] > double_array[max_index]) {
+                max_index = j;
+            }
+
+            if (double_array[j] < double_array[min_index]) {
+                min_index = j;
+            }
+        }
+
+        // 오름차순
+        if (isdesc == 1) {
+            change = double_array[i];
+            double_array[i] = double_array[min_index];
+            double_array[min_index] = change;
+
+            change = double_array[size - i - 1];
+            double_array[size - i - 1] = double_array[max_index];
+            double_array[max_index] = change;
+        }
+        
+        // 내림차순
+        else if (isdesc == 2) {
+            change = double_array[i];
+            double_array[i] = double_array[max_index];
+            double_array[max_index] = change;
+
+            change = double_array[size - i - 1];
+            double_array[size - i - 1] = double_array[min_index];
+            double_array[min_index] = change;
+        }
+    }
 }
 
 int main() {
