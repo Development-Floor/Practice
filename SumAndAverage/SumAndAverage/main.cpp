@@ -22,14 +22,14 @@ double Avg(double* double_array, int size) {
 // 정렬
 // isdesc == 1: 오름차순, isdesc == 2: 내림차순, 그 외: 예외처리
 void MySort(double* double_array, int size, int isdesc) {
-    if (size <= 1 || isdesc != 1 || isdesc != 2) {
+    if (size <= 1 || isdesc != 1 && isdesc != 2) {
         return;
     }
     
     int max_index = 0;
     int min_index = 0;
 
-    int change = 0;
+    double change = 0;
 
     for (int i = 0; i < size / 2; i++) {
         max_index = i;
@@ -52,6 +52,11 @@ void MySort(double* double_array, int size, int isdesc) {
             double_array[i] = double_array[min_index];
             double_array[min_index] = change;
 
+            // 최소값을 바꾸고 최대값을 바꾸기 때문
+            if (max_index == i) {
+                max_index = min_index;
+            }
+
             change = double_array[size - i - 1];
             double_array[size - i - 1] = double_array[max_index];
             double_array[max_index] = change;
@@ -59,13 +64,18 @@ void MySort(double* double_array, int size, int isdesc) {
         
         // 내림차순
         else if (isdesc == 2) {
-            change = double_array[i];
-            double_array[i] = double_array[max_index];
-            double_array[max_index] = change;
-
             change = double_array[size - i - 1];
             double_array[size - i - 1] = double_array[min_index];
             double_array[min_index] = change;
+
+            // 최소값을 바꾸고 최대값을 바꾸기 때문
+            if (max_index == size - i - 1) {
+                max_index = min_index;
+            }
+
+            change = double_array[i];
+            double_array[i] = double_array[max_index];
+            double_array[max_index] = change;
         }
     }
 }
@@ -142,7 +152,6 @@ int main() {
 
     cout << "\n --- 종료 ---" << endl;
 
-    cout << fixed;
     cout << "총합: " << Sum(number_array, count) << endl;
     cout << "평균: " << Avg(number_array, count) << endl;
 
