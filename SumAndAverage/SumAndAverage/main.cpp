@@ -19,12 +19,20 @@ double Avg(double* double_array, int size) {
     return Sum(double_array, size) / size;
 }
 
+// 정렬
+// isdesc == 1: 오름차순, isdesc == 2: 내림차순, 그 외: 예외처리
+void MySort(double* double_array, int size, int isdesc) {
+
+}
+
 int main() {
 
     /*
     *
-    *  숫자를 입력받고 합과 평균을 구해라.
+    *  필수. 숫자를 입력받고 합과 평균을 구해라.
     *
+    *  도전. 정렬구현
+    * 
     */
 
     string numbers = "";
